@@ -1,1 +1,144 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Soccer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+
+    <header class="top-bar">
+      <div class="logo">PIXEL <span>SOCCER</span></div>
+      <div id="player-label">Loading player...</div>
+    </header>
+
+    <!-- MAIN MENU -->
+    <section id="menu-screen" class="screen">
+      <div class="menu-content">
+        <h1>PIXEL<br><span>SOCCER</span></h1>
+        <p class="subtitle">THE ULTIMATE 1V1 CHALLENGE</p>
+
+        <button id="play-button" class="main-button">PLAY</button>
+        <button id="leaderboard-button" class="secondary-button">
+          CHECK LEADERBOARD
+        </button>
+
+        <div class="profile-box">
+          <p>YOUR PLAYER NAME</p>
+          <strong id="menu-player-name">Loading...</strong>
+          <button id="change-name-button" class="small-button">
+            CHANGE NAME
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="game-screen" class="screen hidden">
+      <div class="scoreboard">
+        <div class="team-score">
+          <span>YOU</span>
+          <strong id="player-score">0</strong>
+        </div>
+        <div class="match-clock" id="match-clock">90</div>
+        <div class="team-score">
+          <span>BOTS</span>
+          <strong id="bot-score">0</strong>
+        </div>
+      </div>
+
+      <canvas id="game-canvas" width="900" height="540"></canvas>
+
+      <div class="game-controls">
+        <p><b>MOVE:</b> WASD or ARROW KEYS</p>
+        <p><b>SHOOT:</b> SPACE</p>
+        <p><b>SPRINT:</b> SHIFT</p>
+      </div>
+
+      <div class="game-buttons">
+        <button id="leave-game-button" class="secondary-button">
+          MAIN MENU
+        </button>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD SCREEN -->
+    <section id="leaderboard-screen" class="screen hidden">
+      <h2>WORLD LEADERBOARD</h2>
+      <p class="subtitle">THE BEST PLAYERS IN THE WORLD</p>
+
+      <div class="leaderboard-summary">
+        <span>RANK</span>
+        <span>PLAYER</span>
+        <span>GF</span>
+        <span>GA</span>
+        <span>GD</span>
+        <span>MP</span>
+      </div>
+
+      <div id="leaderboard-list">
+        <p>Loading leaderboard...</p>
+      </div>
+
+      <p class="legend">
+        GF = Goals For · GA = Goals Against · GD = Goal Difference · MP = Matches Played
+      </p>
+
+      <button id="refresh-leaderboard-button" class="secondary-button">
+        REFRESH
+      </button>
+      <button id="leaderboard-back-button" class="main-button">
+        BACK TO MENU
+      </button>
+    </section>
+
+    <!-- PLAYER NAME SCREEN -->
+    <section id="profile-screen" class="screen hidden">
+      <h2>PLAYER PROFILE</h2>
+      <p>Your name is displayed on the worldwide leaderboard.</p>
+
+      <label for="name-input">NEW PLAYER NAME</label>
+      <input id="name-input" type="text" maxlength="20"
+        placeholder="Enter a name">
+
+      <p id="profile-message" class="message"></p>
+
+      <button id="save-name-button" class="main-button">
+        SAVE NAME
+      </button>
+      <button id="profile-back-button" class="secondary-button">
+        BACK TO MENU
+      </button>
+    </section>
+
+    <!-- MATCH RESULT -->
+    <section id="result-screen" class="screen hidden">
+      <h2 id="result-title">MATCH OVER</h2>
+      <div class="final-score">
+        <span id="final-player-score">0</span>
+        <span> - </span>
+        <span id="final-bot-score">0</span>
+      </div>
+      <p id="result-message"></p>
+
+      <button id="play-again-button" class="main-button">
+        PLAY AGAIN
+      </button>
+      <button id="result-menu-button" class="secondary-button">
+        MAIN MENU
+      </button>
+    </section>
+
+    <footer>
+      PIXEL SOCCER · 1V1 ARCADE FOOTBALL
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
