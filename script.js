@@ -6,8 +6,8 @@
 // 1. SUPABASE CONNECTION
 // Replace these two values with your own Supabase details.
 
-const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
-const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+const SUPABASE_URL = "sb_publishable_aYHLwVvMuFwH28qCsgifLw_8zpk9mnu";
+const SUPABASE_KEY = "sb_secret_0o79Unk6V-JIrd59z-4tnw_IhA_TOlq";
 
 const db = window.supabase.createClient(
   SUPABASE_URL,
